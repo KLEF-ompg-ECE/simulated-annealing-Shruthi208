@@ -1,9 +1,9 @@
 # Assignment 1 — Simulated Annealing: Exam Timetable Scheduling
 ## Observation Report
 
-**Student Name  :** ___________________________  
-**Student ID    :** ___________________________  
-**Date Submitted:** ___________________________  
+**Student Name  :** P.Shruthi___________________________  
+**Student ID    :** 2310040061___________________________  
+**Date Submitted:** 15-03-2026__________________________  
 
 ---
 
@@ -23,13 +23,13 @@ Open `sa_timetable.py` and read through it. Then answer these questions.
 **Q1. What does `count_clashes()` measure? What value means a perfect timetable?**
 
 ```
-[ YOUR ANSWER — 2 to 3 sentences ]
+[count_clashes() measures the number of conflicts in the timetable, such as two classes scheduled at the same time for the same room, teacher, or student group. It evaluates how good or bad the timetable is. A value of 0 means there are no clashes, which represents a perfect timetable.]
 ```
 
 **Q2. What does `generate_neighbor()` do? How is the new timetable different from the current one?**
 
 ```
-[ YOUR ANSWER — 2 to 3 sentences ]
+[generate_neighbor() creates a new timetable by making a small change to the current timetable, such as swapping time slots or modifying a class schedule. This helps explore different possible solutions. The new timetable is slightly different from the current one but still based on it.]
 ```
 
 **Q3. In `run_sa()`, there is this line:**
@@ -39,7 +39,7 @@ if delta < 0 or random.random() < math.exp(-delta / T):
 **What does this line decide? Why does SA sometimes accept a worse solution?**
 
 ```
-[ YOUR ANSWER — 2 to 3 sentences ]
+[This line decides whether the new timetable should replace the current timetable. If the new solution has fewer clashes (delta < 0), it is always accepted. Simulated Annealing sometimes accepts worse solutions with a small probability to help escape local minima and explore better solutions later.]
 ```
 
 ---
@@ -55,20 +55,28 @@ python sa_timetable.py
 
 | Metric | Your result |
 |--------|-------------|
-| Number of iterations completed | |
-| Clashes at iteration 1 | |
-| Final best clashes | |
-| Did SA reach 0 clashes? (Yes / No) | |
+| Number of iterations completed |1379 |
+| Clashes at iteration 1 |12 |
+| Final best clashes |3 |
+| Did SA reach 0 clashes? (Yes / No) |yes |
 
 **Copy the printed timetable output here:**
 ```
-[ PASTE TIMETABLE OUTPUT HERE ]
+[inal Timetable
+------------------------------------------
+  Slot 1:  Geography
+  Slot 2:  Chemistry, English
+  Slot 3:  History, Computer Science, Economics
+  Slot 4:  Biology, Statistics
+  Slot 5:  Mathematics, Physics
+------------------------------------------
+  Total clashes : 3]
 ```
 
 **Look at `plots/experiment_1.png` and describe what you see (2–3 sentences).**  
 *Where does the biggest drop in clashes happen? Does the curve flatten out?*
 ```
-[ YOUR OBSERVATION ]
+[The number of clashes drops quickly in the early iterations, with the biggest decrease occurring near the beginning where it falls from around 12 to about 6. After that, the improvement becomes slower with small reductions to 5, 4, and finally 3 clashes. Yes, the curve eventually flattens out, showing that the algorithm stabilizes and finds a near-optimal timetable.]
 ```
 
 ---
@@ -83,19 +91,19 @@ Save plots as `experiment_2a.png`, `experiment_2b.png`, `experiment_2c.png`.
 
 | cooling_rate | Final clashes | Iterations completed | Reached 0 clashes? |
 |-------------|---------------|----------------------|--------------------|
-| 0.80        |               |                      |                    |
-| 0.95        |               |                      |                    |
-| 0.995       |               |                      |                    |
+| 0.80        | 8             | 31                   |  No                |
+| 0.95        | 3             | 135                  |  No                |
+| 0.995       | 3             | 1379                 |  No                |
 
 **Compare the three plots. What do you notice about how fast vs slow cooling affects the result? (3–4 sentences)**  
 *Hint: Fast cooling = temperature drops quickly. Does it have time to explore well?*
 ```
-[ YOUR OBSERVATION ]
+[From the three plots, fast cooling (0.80) causes the temperature to drop very quickly, so the algorithm stops exploring early and gets stuck with more clashes. Medium cooling (0.95) allows a little more exploration and improves the solution compared to fast cooling. Slow cooling (0.995) decreases the temperature gradually, giving the algorithm more time to search for better timetables. As a result, slower cooling generally produces a better or more stable solution than fast cooling.]
 ```
 
 **Which cooling_rate gave the best result? Why do you think that is?**
 ```
-[ YOUR ANSWER ]
+[The cooling_rate 0.95 and 0.995 gave the best results with 3 final clashes. This is because slower cooling allows the algorithm to explore more possible solutions before settling on a final timetable. It avoids getting stuck too early in a poor solution]
 ```
 
 ---
@@ -106,12 +114,12 @@ Save plots as `experiment_2a.png`, `experiment_2b.png`, `experiment_2c.png`.
 
 | Experiment | Key setting | Final clashes | Main finding in one sentence |
 |------------|-------------|---------------|------------------------------|
-| 1 — Baseline | cooling_rate = 0.995 | | |
-| 2 — Cooling rate | cooling_rate = ___ | | |
+| 1 — Baseline | cooling_rate = 0.995 |3|Slow cooling allows the algorithm to search longer and produce a better timetable with fewer clashes |
+| 2 — Cooling rate | cooling_rate =0.95 |3 |A moderate cooling rate balances exploration and convergence better than very fast cooling |
 
 **In your own words — what is the most important thing you learned about Simulated Annealing from these experiments? (3–5 sentences)**
 ```
-[ YOUR REFLECTION ]
+[From these experiments, I learned that the cooling rate is very important in Simulated Annealing. If the temperature decreases too quickly, the algorithm stops exploring early and may get stuck with more clashes. Slower cooling allows the algorithm to explore more possible solutions and gradually improve the timetable. Therefore, choosing a proper cooling rate helps the algorithm find better results.]
 ```
 
 ---
