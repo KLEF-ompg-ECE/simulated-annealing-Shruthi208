@@ -1,9 +1,9 @@
 # Assignment 1 — Simulated Annealing: Exam Timetable Scheduling
 ## Observation Report
 
-**Student Name  :** P.Shruthi___________________________  
-**Student ID    :** 2310040061___________________________  
-**Date Submitted:** 15-03-2026__________________________  
+**Student Name  :**  P.Shruthi  
+**Student ID    :** 2310040061
+**Date Submitted:** 15-03-2026
 
 ---
 
@@ -55,14 +55,14 @@ python sa_timetable.py
 
 | Metric | Your result |
 |--------|-------------|
-| Number of iterations completed |1379 |
+| Number of iterations completed |1379|
 | Clashes at iteration 1 |12 |
 | Final best clashes |3 |
-| Did SA reach 0 clashes? (Yes / No) |yes |
+| Did SA reach 0 clashes? (Yes / No) | |
 
 **Copy the printed timetable output here:**
 ```
-[inal Timetable
+[ Final Timetable
 ------------------------------------------
   Slot 1:  Geography
   Slot 2:  Chemistry, English
@@ -91,9 +91,9 @@ Save plots as `experiment_2a.png`, `experiment_2b.png`, `experiment_2c.png`.
 
 | cooling_rate | Final clashes | Iterations completed | Reached 0 clashes? |
 |-------------|---------------|----------------------|--------------------|
-| 0.80        | 8             | 31                   |  No                |
-| 0.95        | 3             | 135                  |  No                |
-| 0.995       | 3             | 1379                 |  No                |
+| 0.80        |8              | 31                   | No                 |
+| 0.95        |3              | 135                  | No                 |
+| 0.995       |3              | 1379                 | No                 |
 
 **Compare the three plots. What do you notice about how fast vs slow cooling affects the result? (3–4 sentences)**  
 *Hint: Fast cooling = temperature drops quickly. Does it have time to explore well?*
@@ -103,7 +103,7 @@ Save plots as `experiment_2a.png`, `experiment_2b.png`, `experiment_2c.png`.
 
 **Which cooling_rate gave the best result? Why do you think that is?**
 ```
-[The cooling_rate 0.95 and 0.995 gave the best results with 3 final clashes. This is because slower cooling allows the algorithm to explore more possible solutions before settling on a final timetable. It avoids getting stuck too early in a poor solution]
+[The cooling_rate 0.95 and 0.995 gave the best results with 3 final clashes. This is because slower cooling allows the algorithm to explore more possible solutions before settling on a final timetable. It avoids getting stuck too early in a poor solution.]
 ```
 
 ---
@@ -114,8 +114,8 @@ Save plots as `experiment_2a.png`, `experiment_2b.png`, `experiment_2c.png`.
 
 | Experiment | Key setting | Final clashes | Main finding in one sentence |
 |------------|-------------|---------------|------------------------------|
-| 1 — Baseline | cooling_rate = 0.995 |3|Slow cooling allows the algorithm to search longer and produce a better timetable with fewer clashes |
-| 2 — Cooling rate | cooling_rate =0.95 |3 |A moderate cooling rate balances exploration and convergence better than very fast cooling |
+| 1 — Baseline | cooling_rate = 0.995 |3|Slow cooling allows the algorithm to search longer and produce a better timetable with fewer clashes|
+| 2 — Cooling rate | cooling_rate =0.95 |3 |A moderate cooling rate balances exploration and convergence better than very fast cooling. |
 
 **In your own words — what is the most important thing you learned about Simulated Annealing from these experiments? (3–5 sentences)**
 ```
